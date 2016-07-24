@@ -16,17 +16,30 @@
         </header>
         
         <form>
-            <fieldset class="form-group">
-                <label for="user-str">Username</label>
-                <input type="text" id="user-str" value="billgates" />
-                <button type="button" id="bring-img" onclick="getImages()">Get Images</button>
-                <button type="button" onclick="clearImages()">Clear Images</button>
-                <button type="button" onclick="followUser()">Realtime Update</button>                                  
+            <fieldset class="form-inline">
+                <div class="form-group">
+                    <label for="user-str">Username</label>
+                    <input type="text" id="user-str" value="billgates" />
+                </div>
+                <div class="form-group">
+                    <button type="button" id="bring-img" onclick="getImages()" data-toggle="tooltip"
+                    data-placement="bottom" title="Click to get images">Get Images</button>
+                </div>
+                <div class="form-group">
+                    <button type="button" onclick="clearImages()" data-toggle="tooltip"
+                    data-placement="bottom" title="Click to clear images and/or stop action">Clear Images</button>
+                </div>
+                <div class="form-group">
+                    <button type="button" onclick="followUser()" data-toggle="tooltip"
+                    data-placement="bottom" title="Click to get images in realtime">Realtime Update</button>
+                </div>
             </fieldset>
-            <fieldset>
+            <div class="form-group">
                 <legend>Progress Messages</legend>
-                <span id="status" />
-            </fieldset>
+                <div data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+                    <span id="status" />
+                </div>
+            </div>
         </form>        
 
         <div class="container">

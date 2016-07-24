@@ -34,7 +34,7 @@ updateStatus = function(statusText, statusState) {
     var statusNode = document.getElementById('status');
     var statusNodeElement = document.createElement('p');
     var statusNodeText = document.createTextNode(statusText);
-    
+
     statusNodeElement.className = statusState;
 
     // Removes child nodes
@@ -126,6 +126,8 @@ getImages = function() {
                         var jsonForm = JSON.parse(data.contents);
                         if (jsonForm.items.length < 1) {
                             updateStatus('Got nothing', 'text-info');
+                            document.getElementById('bring-img').disabled = false;
+                            document.getElementById('user-str').disabled = false;
                             return;
                         }
 
@@ -210,7 +212,7 @@ followUser = function() {
     var mediaUrl = alloworigin + 'https://www.instagram.com/' + userName + '/media/';
 
     getNewest = function() {
-        
+
         // 'currentTime', number, if time is too late, function ends
         var currentTime = (new Date).getTime();
 
@@ -238,20 +240,22 @@ followUser = function() {
 
                     if (jsonForm.items.length < 1) {
                         updateStatus('Got nothing', 'text-info');
+                        document.getElementById('bring-img').disabled = false;
+                        document.getElementById('user-str').disabled = false;
                         return;
                     }
 
                     var jsonArr = jsonForm.items;
                     // 'imgTime', object, date in UNIX setting
                     var imgTime;
-                    
+
                     for (i in jsonArr) {
                         imgTime = new Date(parseInt(jsonArr[i].created_time)*1000);
                         if (imgTime > currentTime) {
                             pushImage(jsonArr[i].images.low_resolution.url);
                         }
                     }
-                    
+
                     return setTimeout(function() {
                         getNewest()
                     }, 5100);
