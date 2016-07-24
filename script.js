@@ -180,11 +180,12 @@ clearImages = function() {
 
     clearClicked = 1;
     if (isEmpty(children)) {
-        console.log('There are no images!');
+        //console.log('There are no images!');
+        updateStatus('There are no images!', 'text-info');
     } else {
         children.empty();
         //console.log("Images cleared!");
-        updateStatus('Images cleared!', 'text-info');
+        updateStatus('Images Cleared clicked!', 'text-info');
     }
 };
 
