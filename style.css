@@ -1,0 +1,19 @@
+/*
+form {
+    position: fixed;
+    background: #e6e6e6;
+}
+*/
+
+.instagram-list {
+    list-style: none;
+}
+
+.instagram-list__element {
+    display: inline;
+}
+
+.instagram-list__element__img {
+    border-radius: 6px;
+    margin: 6px;
+}

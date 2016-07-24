@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+    <head>
+        <title>HTML Page</title>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <header>
+            <h1>Insta-grab</h1>
+        </header>
+        
+        <form>
+            <fieldset class="form-group">
+                <label for="user-str">Username</label>
+                <input type="text" id="user-str" value="billgates" />
+                <button type="button" id="bring-img" onclick="getImages()">Get Images</button>
+                <button type="button" onclick="clearImages()">Clear Images</button>
+                <button type="button" onclick="followUser()">Realtime Update</button>                                  
+            </fieldset>
+            <fieldset>
+                <legend>Progress Messages</legend>
+                <span id="status" />
+            </fieldset>
+        </form>        
+
+        <div class="container">
+            <div class="row">
+                <ul id="instagram-list" class="instagram-list"></ul>
+            </div>            
+        </section>
+        
+        <!--<ul id="instagram-list" class="instagram-list"></ul>-->
+    </body>
+</html>
