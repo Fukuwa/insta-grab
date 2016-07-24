@@ -178,6 +178,9 @@ var clearClicked = 0;
 clearImages = function() {
     var children = $('#instagram-list').children();
 
+    document.getElementById('bring-img').disabled = false;
+    document.getElementById('user-str').disabled = false;
+
     clearClicked = 1;
     if (isEmpty(children)) {
         //console.log('There are no images!');
